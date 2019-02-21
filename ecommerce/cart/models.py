@@ -15,7 +15,8 @@ from user_model.models import register_model
 
 
 class cartitem(models.Model):
-     Cart = models.ForeignKey('carttotal', null=True, blank=True)
+     Cart = models.ForeignKey('carttotal', null=True,
+                              blank=True, on_delete=models.CASCADE)
      user_id = models.ForeignKey(register_model, null=True, blank=True, on_delete=models.CASCADE)
      product = models.ForeignKey(product, null=True, blank=True, on_delete=models.CASCADE)
      productImage = models.ForeignKey(product_Image, null=True, blank=True, on_delete=models.CASCADE)
